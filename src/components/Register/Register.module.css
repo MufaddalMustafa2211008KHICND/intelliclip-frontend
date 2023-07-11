@@ -7,3 +7,22 @@
     width: 400px;
     margin: 20px;
 }
+.loginbtn{
+    display: flex;
+    margin-top: 40px;
+margin-left: 150px;
+}
+
+.button {
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    padding: 8px 34px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+
+  }

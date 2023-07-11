@@ -23,8 +23,12 @@ const Login = () => {
       <div className={styles.inputContainer}>
         <InputField placeholder='Password' value={password} handler={passwordHandler} type='password' required={true} />
       </div>
-      
+      <div className={styles.loginbtn}>
+<button className={styles.button}>Login</button>
+<span className={styles.forgetpassword}>Forget Password?</span>
     </div>
+    </div>
+    
   )
 }
 

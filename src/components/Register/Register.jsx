@@ -31,6 +31,9 @@ const Register = () => {
       <div className={styles.inputContainer}>
         <InputField placeholder='Password' value={password} handler={passwordHandler} type='password' required={true} />
       </div>
+      <div className={styles.loginbtn}>
+<button className={styles.button}>Register</button>
+</div>
     </div>
   )
 }
