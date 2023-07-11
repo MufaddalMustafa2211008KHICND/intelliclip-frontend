@@ -21,20 +21,28 @@ const Register = () => {
     setPassword(value)
   }
 
+  const handleRegister = (e) => {
+    e.preventDefault()
+
+    alert(`name: ${name} \nemail: ${email} \npassword: ${password}`)
+  }
+
   return (
     <div>
-      <div className={styles.inputContainer}>
-        <InputField placeholder='Full Name' value={name} handler={nameHandler} type='text' />
-      </div>
-      <div className={styles.inputContainer}>
-        <InputField placeholder='E-mail Address' value={email} handler={emailHandler} type='email' />
-      </div>
-      <div className={styles.inputContainer}>
-        <InputField placeholder='Password' value={password} handler={passwordHandler} type='password' />
-      </div>
-      <div className={styles.loginbtn}>
-        <Button>Register</Button>
-      </div>
+      <form onSubmit={handleRegister}>
+        <div className={styles.inputContainer}>
+          <InputField placeholder='Full Name' value={name} handler={nameHandler} type='text' required={true} />
+        </div>
+        <div className={styles.inputContainer}>
+          <InputField placeholder='E-mail Address' value={email} handler={emailHandler} type='email' required={true} />
+        </div>
+        <div className={styles.inputContainer}>
+          <InputField placeholder='Password' value={password} handler={passwordHandler} type='password' required={true} />
+        </div>
+        <div className={styles.btnContainer}>
+          <Button type='submit'>Register</Button>
+        </div>
+      </form>
     </div>
   )
 }
