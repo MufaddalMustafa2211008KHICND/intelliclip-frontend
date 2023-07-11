@@ -1,27 +1,22 @@
-.Navigation {
+.navigation {
     margin: 30px;
 }
 
-.login{
- color: rgb(140, 140, 140);
- font-size: 20px;
- text-decoration:underline;
- text-underline-offset: 20px;
- font-family: sans-serif;
-}
-.register{
+.default {
     color: rgb(140, 140, 140);
     font-size: 20px;
     text-decoration:underline;
     text-underline-offset: 20px;
     font-family: sans-serif;
-    margin-left: 20px;
+    margin: 0 20px;
 
 }
-.register:hover{
+
+.default:hover{
     color: rgb(255, 255, 255);
 }
-.login:hover{
-    color: rgb(255, 255, 255);
+
+.active {
+    color: #fff;
 }
 

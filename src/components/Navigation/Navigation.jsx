@@ -1,12 +1,12 @@
-import styled from './Navigation.module.css'
+import styles from './Navigation.module.css'
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const Navigation = () => {
   return (
-    <div className={styled.Navigation}>
-        <Link className={styled.login}  to='/login' >Login</Link>
-        <Link className={styled.register} to='/register' >Register</Link>
+    <div className={styles.navigation}>
+        <NavLink className={({ isActive }) => isActive ? `${styles.active} ${styles.default}` : styles.default}  to='/' >Login</NavLink>
+        <NavLink className={({ isActive }) => isActive ? `${styles.active} ${styles.default}` : styles.default} to='/register' >Register</NavLink>
     </div>
   )
 }
