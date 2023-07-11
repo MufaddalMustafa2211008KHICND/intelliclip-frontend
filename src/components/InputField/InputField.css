@@ -1,5 +1,5 @@
 .label {
-    color: #8a9399 !important;
+    color: #8d8d8d !important;
 }
 
 .label.Mui-focused {
@@ -15,13 +15,13 @@
 } */
 
 .MuiOutlinedInput-root fieldset {
-    border-color: #8a9399 !important;
+    border-color: #8d8d8d !important;
     border-radius: 8px;
+    border-width: 2px;
 }
 
 .MuiOutlinedInput-root:hover fieldset {
     border-color: white !important;
-    border-width: 2px;
 }
 
 .MuiOutlinedInput-root.Mui-focused fieldset {

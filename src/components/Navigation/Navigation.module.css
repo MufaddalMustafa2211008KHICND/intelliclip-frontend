@@ -5,16 +5,18 @@
 
 .default {
     color: rgb(140, 140, 140);
-    font-size: 20px;
-    text-decoration:underline;
-    text-underline-offset: 20px;
+    font-size: 18px;
+    text-decoration: none;
+    /* text-underline-offset: 20px; */
     font-family: sans-serif;
-    margin: 0 20px;
+    margin: 0 12px;
     cursor: pointer;
+    border-bottom: 2px solid;
+    padding-bottom: 12px;
 }
 
 .default:hover{
-    color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
 }
 
 .active {
