@@ -1,0 +1,23 @@
+.login{
+ color: rgb(140, 140, 140);
+ font-size: 20px;
+ text-decoration:underline;
+ text-underline-offset: 20px;
+ font-family: sans-serif;
+}
+.register{
+    color: rgb(140, 140, 140);
+    font-size: 20px;
+    text-decoration:underline;
+    text-underline-offset: 20px;
+    font-family: sans-serif;
+    margin-left: 20px;
+
+}
+.register:hover{
+    color: rgb(255, 255, 255);
+}
+.login:hover{
+    color: rgb(255, 255, 255);
+}
+
