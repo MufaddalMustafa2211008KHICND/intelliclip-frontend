@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import InputField from '../InputField/InputField'
 import styles from './Register.module.css'
+import Button from '../Button/Button'
 
 const Register = () => {
 
@@ -23,17 +24,17 @@ const Register = () => {
   return (
     <div>
       <div className={styles.inputContainer}>
-        <InputField placeholder='Full Name' value={name} handler={nameHandler} type='text' required={true} />
+        <InputField placeholder='Full Name' value={name} handler={nameHandler} type='text' />
       </div>
       <div className={styles.inputContainer}>
-        <InputField placeholder='E-mail Address' value={email} handler={emailHandler} type='email' required={true} />
+        <InputField placeholder='E-mail Address' value={email} handler={emailHandler} type='email' />
       </div>
       <div className={styles.inputContainer}>
-        <InputField placeholder='Password' value={password} handler={passwordHandler} type='password' required={true} />
+        <InputField placeholder='Password' value={password} handler={passwordHandler} type='password' />
       </div>
       <div className={styles.loginbtn}>
-<button className={styles.button}>Register</button>
-</div>
+        <Button>Register</Button>
+      </div>
     </div>
   )
 }

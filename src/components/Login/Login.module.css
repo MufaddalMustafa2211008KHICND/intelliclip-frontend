@@ -1,32 +1,17 @@
-
 .inputContainer {
     width: 400px;
     margin: 20px;
 }
 .loginbtn{
     display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 40px;
-margin-left: 100px;
 }
 
-.button {
-    background-color: #008CBA;
-    border: none;
-    color: white;
-    border-radius: 10px;
-    padding: 8px 34px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 20px;
-    cursor: pointer;
-
-  }
-  .forgetpassword{
+.forgetpassword{
     color: white;
     cursor: pointer;
-
-    margin-top: 8px;
     font-family: sans-serif;
-    margin-left: 12px;
-  }
+    margin-left: 20px;
+}
