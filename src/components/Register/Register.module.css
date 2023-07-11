@@ -1,4 +1,9 @@
-.register{
+/* .register{
     color: bisque;
     background-color: azure;
+} */
+
+.inputContainer {
+    width: 400px;
+    margin: 20px;
 }

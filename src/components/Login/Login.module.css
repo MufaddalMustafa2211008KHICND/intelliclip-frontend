@@ -25,3 +25,8 @@
     font-family: sans-serif;
     margin-left: 12px;
   }
+
+.inputContainer {
+    width: 400px;
+    margin: 20px;
+}
