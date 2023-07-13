@@ -1,8 +1,8 @@
-.label {
+label {
     color: #8d8d8d !important;
 }
 
-.label.Mui-focused {
+label.Mui-focused {
     color: #a4c6f8 !important;
 }
 
