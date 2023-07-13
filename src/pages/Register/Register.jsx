@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import InputField from '../InputField/InputField'
+import InputField from '../../components/InputField/InputField'
 import styles from './Register.module.css'
-import Button from '../Button/Button'
+import Button from '../../components/Button/Button'
+import Navigation from '../../components/Navigation/Navigation'
 
-const Register = () => {
+const Register = ({ hideNavigation }) => {
 
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -28,7 +29,8 @@ const Register = () => {
   }
 
   return (
-    <div>
+    <div className={styles.mainContainer}>
+      <Navigation/>
       <form onSubmit={handleRegister}>
         <div className={styles.inputContainer}>
           <InputField placeholder='Full Name' value={name} handler={nameHandler} type='text' required={true} />

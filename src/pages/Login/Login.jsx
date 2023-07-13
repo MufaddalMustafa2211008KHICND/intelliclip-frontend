@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import InputField from '../InputField/InputField'
+import InputField from '../../components/InputField/InputField'
 import styles from './Login.module.css'
-import Button from '../Button/Button'
+import Button from '../../components/Button/Button'
+import Navigation from '../../components/Navigation/Navigation';
 
 const Login = () => {
 
@@ -23,7 +24,8 @@ const Login = () => {
   }
 
   return (
-    <div>
+    <div className={styles.mainContainer}>
+      <Navigation/>
       <form onSubmit={handleLogin}>
         <div className={styles.inputContainer}>
           <InputField placeholder='E-mail Address' value={email} handler={emailHandler} type='email' required={true} />
@@ -37,7 +39,6 @@ const Login = () => {
         </div>
       </form>
     </div>
-    
   )
 }
 

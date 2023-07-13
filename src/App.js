@@ -1,17 +1,20 @@
 import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Navigation from './components/Navigation/Navigation';
-import Login from './components/Login/Login';
-import Register from './components/Register/Register';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import Login from './pages/Login/Login';
+import Register from './pages/Register/Register';
+import Home from './pages/Home/Home';
+import Settings from './pages/Settings/Settings';
 
 function App() {
   return (
-    <div className="Container">
+    <div className="App">
       <BrowserRouter>
-        <Navigation/>
         <Routes>
-          <Route path='/' element={<Login/>} />
+          <Route path='/' element={<Navigate to='/login' />} />
+          <Route path='/dashboard' element={<Home/>} />
+          <Route path='/login' element={<Login/>} />
           <Route path='/register' element={<Register/>} />
+          <Route path='/settings' element={<Settings/>} />
         </Routes>
       </BrowserRouter>
     </div>
