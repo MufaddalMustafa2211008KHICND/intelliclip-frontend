@@ -3,8 +3,11 @@ import InputField from '../../components/InputField/InputField'
 import styles from './Login.module.css'
 import Button from '../../components/Button/Button'
 import Navigation from '../../components/Navigation/Navigation';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+
+  const navigate = useNavigate()
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -21,6 +24,10 @@ const Login = () => {
     e.preventDefault()
 
     alert(`email: ${email} \npassword: ${password}`)
+  }
+
+  const gotoHome = () => {
+    navigate('/')
   }
 
   return (

@@ -3,8 +3,11 @@ import InputField from '../../components/InputField/InputField'
 import styles from './Register.module.css'
 import Button from '../../components/Button/Button'
 import Navigation from '../../components/Navigation/Navigation'
+import { useNavigate } from 'react-router-dom'
 
 const Register = ({ hideNavigation }) => {
+
+  const navigate = useNavigate()
 
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -26,6 +29,10 @@ const Register = ({ hideNavigation }) => {
     e.preventDefault()
 
     alert(`name: ${name} \nemail: ${email} \npassword: ${password}`)
+  }
+
+  const gotoHome = () => {
+    navigate('/')
   }
 
   return (
