@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { IconButton, InputAdornment, TextField } from '@mui/material'
-import './InputField.css'
+import { IconButton, InputAdornment, TextField, ThemeProvider } from '@mui/material'
 import { Visibility, VisibilityOff } from '@mui/icons-material'
+import theme from './inputFieldTheme';
 
 const InputField = ({ placeholder, value, handler, type, required }) => {
 
@@ -19,13 +19,14 @@ const InputField = ({ placeholder, value, handler, type, required }) => {
 
 
   return (
+    <ThemeProvider theme={theme}>
       <TextField 
         id="outlined-basic" 
         label={placeholder}
         variant="outlined" 
         value={value}
         onChange={handleChange}
-        type={type === 'password' ? (showPassword ? 'text' : 'password') : 'text'}
+        type={type === 'password' ? (showPassword ? 'text' : 'password') : type}
         required={required}
         fullWidth={true}
         InputProps={type === 'password' && {
@@ -41,6 +42,7 @@ const InputField = ({ placeholder, value, handler, type, required }) => {
           </InputAdornment>,
         }}
       />
+    </ThemeProvider>
   )
 }
 
