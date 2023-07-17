@@ -9,7 +9,7 @@ const UploadBtn = () => {
     <div className={styles.container}>
         <ThemeProvider theme={theme}>
             <Button variant="outlined" startIcon={<UploadIcon />}>
-                Upload
+            Get Started
             </Button>
         </ThemeProvider>
     </div>

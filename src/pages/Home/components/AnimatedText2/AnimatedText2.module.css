@@ -1,0 +1,79 @@
+
+p {
+  text-shadow: 0 0 7px rgba(255,255,255,.3), 0 0 3px rgba(255,255,255,.3);
+}
+.container {
+  color: #e5e5e5;
+  font-size: 30px;
+  text-transform: uppercase;
+  margin-top: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animation {
+  height:60px;
+  overflow: hidden;
+  margin-left: 1rem;
+  text-align: center;
+}
+
+.animation > div > div {
+  padding: 0.25rem 0.75rem;
+  display:inline-block;
+  height:2.81rem;
+  margin-bottom: 1.5rem;}
+
+.animation div:first-child {
+  animation: text-animation 8s infinite;
+
+}
+
+.first div {
+  background-color:#20a7d8;
+}
+.second div {
+  background-color:#CD921E;
+}
+.third div {
+  background-color:#c10528;
+}
+.forth div {
+    background-color:#2a6a81;
+  }
+  .fifth div {
+    background-color:#4acd1e;
+  }
+  .sixth div {
+    background-color:#bb5366;
+  }
+  .seventh div {
+    background-color:#2619b3;
+  }
+  .eighth div{
+    background-color:#2a6a81;
+
+  }
+  .ninth div{
+    background-color:#e68fbc;
+
+  }
+  .tenth div{
+    background-color:#8ea7b0;
+
+  }
+
+  @keyframes text-animation {
+    0% {margin-top: 0;}
+    10% {margin-top: 0;}
+    20% {margin-top: -11.62rem;}
+    30% {margin-top: -11.62rem;}
+    40% {margin-top: -27.24rem;}
+    60% {margin-top: -12rem;}
+    70% {margin-top: -12rem;}
+    80% {margin-top: -16rem;}
+    90% {margin-top: -18rem;}
+    100% {margin-top: -20rem;}
+  }
+  

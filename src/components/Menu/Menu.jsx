@@ -16,6 +16,9 @@ import ListIcon from '@mui/icons-material/List';
 import SettingsIcon from '@mui/icons-material/Settings';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useNavigate } from 'react-router-dom';
+import styled from '@emotion/styled';
+import { ThemeProvider } from '@emotion/react';
+import theme from './menuTheme'
 
 export default function AccountMenu() {
 
@@ -37,16 +40,18 @@ export default function AccountMenu() {
 
   return (
     <React.Fragment>
+    
       <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
         <Tooltip title="Account settings">
-          <IconButton
+        <ThemeProvider theme={theme}>
+          <IconButton 
             onClick={handleClick}
             size="small"
             sx={{ ml: 2 }}
             aria-controls={open ? 'account-menu' : undefined}
             aria-haspopup="true"
             aria-expanded={open ? 'true' : undefined}
-            style={{color: 'white', fontSize: '30px !important'}}
+            style={{color: 'white'}}
           >
             {/* <Avatar sx={{ width: 32, height: 32 }}>M</Avatar> */}
             {/* <MoreVertIcon /> */}
@@ -54,6 +59,7 @@ export default function AccountMenu() {
             {/* <SettingsIcon/> */}
             {/* <MenuIcon/> */}
           </IconButton>
+          </ThemeProvider>
         </Tooltip>
       </Box>
       <Menu
@@ -68,11 +74,13 @@ export default function AccountMenu() {
             overflow: 'visible',
             filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
             mt: 1.5,
+       
             '& .MuiAvatar-root': {
               width: 32,
               height: 32,
               ml: -0.5,
               mr: 1,
+             
             },
             '&:before': {
               content: '""',
