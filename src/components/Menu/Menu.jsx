@@ -19,6 +19,7 @@ import { useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { ThemeProvider } from '@emotion/react';
 import theme from './menuTheme'
+import Cookies from 'js-cookie';
 
 export default function AccountMenu() {
 
@@ -36,6 +37,12 @@ export default function AccountMenu() {
   const gotoSettings = () => {
     handleClose()
     navigate('/settings')
+  }
+
+  const logout = () => {
+    handleClose()
+    Cookies.remove('token')
+    navigate('/login')
   }
 
   return (
@@ -118,7 +125,7 @@ export default function AccountMenu() {
           </ListItemIcon>
           Profile settings
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={logout}>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>

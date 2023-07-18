@@ -4,7 +4,7 @@ import { Button, ThemeProvider } from '@mui/material';
 import theme from './uploadBtnTheme'
 import styles from './UploadBtn.module.css'
 
-const UploadBtn = () => {
+const UploadBtn = ({ isAuthenticated }) => {
   return (
     <div className={styles.container}>
         <ThemeProvider theme={theme}>

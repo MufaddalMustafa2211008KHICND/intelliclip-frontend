@@ -1,17 +1,47 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import InputField from '../../components/InputField/InputField'
 import styles from './Register.module.css'
 import Button from '../../components/Button/Button'
 import Navigation from '../../components/Navigation/Navigation'
 import { useNavigate } from 'react-router-dom'
+import useAuth from '../../hooks/useAuth';
+import { createPortal } from 'react-dom'
+import { Alert, AlertTitle } from '@mui/material'
 
-const Register = ({ hideNavigation }) => {
+const Register = () => {
+
+  const { register, checkAuth } = useAuth()
 
   const navigate = useNavigate()
 
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [message, setMessage] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [alertType, setAlertType] = useState('success')
+  const [showAlert, setShowAlert] = useState(false)
+
+  useEffect(() => {
+    if (checkAuth()) {
+      navigate('/')
+    }
+  }, [])
+
+  const handleMessage = (value, type) => {
+    if(value === '') {
+      setShowAlert(false)
+      setMessage(value)
+      return
+    }
+    setShowAlert(true)
+    setAlertType(type)
+    setMessage(value)
+  }
+
+  const handleLoading = (value) => {
+    setLoading(value)
+  }
 
   const nameHandler = (value) => {
     setName(value)
@@ -25,14 +55,14 @@ const Register = ({ hideNavigation }) => {
     setPassword(value)
   }
 
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault()
 
-    alert(`name: ${name} \nemail: ${email} \npassword: ${password}`)
-  }
+    const reqBody = {
+      'full_name': name, email, password
+    }
 
-  const gotoHome = () => {
-    navigate('/')
+    await register({ reqBody, handleMessage, handleLoading })
   }
 
   return (
@@ -52,6 +82,16 @@ const Register = ({ hideNavigation }) => {
           <Button type='submit'>Register</Button>
         </div>
       </form>
+      {loading && <h1 style={{color: 'white'}}>Loading...</h1>}
+      {showAlert && createPortal(
+        <div style={{display: 'flex', justifyContent: 'center', width: '100%', position: 'absolute', top: '0', left: '0'}}>
+          <Alert severity={alertType} style={{margin: '20px', width: '600px'}}
+            onClose={() => setShowAlert(false)}>
+            <AlertTitle><span style={{textTransform: 'capitalize'}}>{alertType}</span></AlertTitle>
+            {message}
+          </Alert>
+        </div>, document.getElementById('root')
+      )}
     </div>
   )
 }
