@@ -24,11 +24,7 @@ const callApi = async (options, callback, stateFunctions) => {
             const result = await response.json()
             console.log(result)
             handleLoading(false)
-            if(errorFeedback)
-                handleMessage(errorFeedback, 'error');
-            else {
-                handleMessage(result.message, 'error')
-            }
+            handleMessage(errorFeedback ? errorFeedback : result.message, 'error')
             return
         }
         else {
@@ -62,7 +58,7 @@ const useAuth = () => {
             errorFeedback: 'Email or password is invalid'
         }, (res) => {
             Cookies.set('token', res.data.token, {
-                expires: 1
+                expires: new Date(jwtDecode(res.data.token).exp * 1000)
             })
             navigate('/')
         }, {
