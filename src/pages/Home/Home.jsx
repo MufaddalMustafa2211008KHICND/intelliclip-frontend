@@ -28,8 +28,8 @@ const Home = () => {
   return (
     <>
         <Navbar isAuthenticated={isAuthenticated}/>
-        {/* <AnimatedText/> */}
-        <AnimatedText2/>
+        { <AnimatedText/> }
+        {/* <AnimatedText2/> */}
         <UploadBtn isAuthenticated={isAuthenticated}/>
     </>
   )

@@ -16,10 +16,10 @@ const text = [
 ]
 
 const colors = {
-    1: '#20a7d8',
-    2: '#CD921E',
-    3: '#c10528',
-    4: 'purple',
+    1: '',
+    2: '',
+    3: '',
+    4: '',
 }
 
 const AnimatedText = () => {
