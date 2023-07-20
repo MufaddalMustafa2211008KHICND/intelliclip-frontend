@@ -4,6 +4,7 @@ import LinkX from '../LinkX/LinkX';
 import AccountMenu from '../Menu/Menu';
 import { useLocation } from 'react-router-dom';
 import logo from '../images/logo.png';
+import MyVideos from '../MyVideos/MyVideos';
 const Navbar = ({ isAuthenticated }) => {
 
   const { pathname } = useLocation()
@@ -13,6 +14,7 @@ const Navbar = ({ isAuthenticated }) => {
       <div className={styles.logo}>
         <img src={logo} alt="" />
       </div>
+      {isAuthenticated ? <LinkX name='Videos' path={'/videos'}/> : <></>}
         <LinkX name='Home' path={'/'} />
         {isAuthenticated ? <AccountMenu /> : (pathname === '/' && <LinkX name='Signin' path={'/login'} />)}
         

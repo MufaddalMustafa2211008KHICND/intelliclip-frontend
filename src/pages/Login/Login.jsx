@@ -12,6 +12,7 @@ import Navbar from '../../components/Navbar/Navbar';
 const Login = () => {
 
   const { login, checkAuth } = useAuth()
+  
 
   const navigate = useNavigate()
 
