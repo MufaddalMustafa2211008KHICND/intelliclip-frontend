@@ -2,6 +2,7 @@ import Cookies from 'js-cookie'
 import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
+import styles from './MyVideos.module.css'
 
 const MyVideos= ({  }) => 
 
@@ -20,15 +21,13 @@ method:'POST', headers:{'Authorization':'Bearer' + ' '+token}
   }).then((videos)=>{setvideos(videos.data.videos);console.log(videos.data.videos)})
 }
     return (
-      <main>
-<h2>Responsive table</h2>
-<table class="table">
+      <main className={styles.table}>
+<table >
   <thead>
-    <tr>
-      <th>Id</th>
-      <th>Name</th>
-      <th>Uploaded At</th>
-<th>Video</th>
+    <tr className={styles.heading}>
+      <th className={styles.tablemain}>ID</th>
+      <th className={styles.tablemain}>NAME</th>
+      <th className={styles.tablemain}>UPLOAD AT</th>
     </tr>
   </thead>
   <tbody>
@@ -36,11 +35,10 @@ method:'POST', headers:{'Authorization':'Bearer' + ' '+token}
    {
     videos.map((video)=>(
 <tr>
-      <td><span class="res-head">Id:</span>{video.id}</td>
-      <td><span class="res-head">Name:</span>{video.name}</td>
-      <td><span class="res-head">Uploaded At:</span>{video.date}</td>
-      <td><video src={video.file.url} height={'200px'} width={'200px'} controls>
-        </video></td>
+      <td><span className={styles.head}></span>{video.id}</td>
+      <td><span className={styles.head}></span>{video.name}</td>
+      <td><span className={styles.head}></span>{video.date}</td>
+      
 
    
     </tr>

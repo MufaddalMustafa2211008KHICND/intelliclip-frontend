@@ -14,7 +14,7 @@ const Navbar = ({ isAuthenticated }) => {
       <div className={styles.logo}>
         <img src={logo} alt="" />
       </div>
-      {isAuthenticated ? <LinkX name='Videos' path={'/videos'}/> : <></>}
+      {isAuthenticated ? <LinkX name='My Videos' path={'/videos'}/> : <></>}
         <LinkX name='Home' path={'/'} />
         {isAuthenticated ? <AccountMenu /> : (pathname === '/' && <LinkX name='Signin' path={'/login'} />)}
         
